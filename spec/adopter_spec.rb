@@ -4,7 +4,7 @@ describe(Adopter) do
   describe('#name') do
     it('tells you its name') do
       test_adopter = Adopter.new({:name => "Jen", :phone => "5038675309", :type_preference => "cat", :breed_preference => "Turkish Angora", :id => nil})
-      expect(test_adopter.name()).to(eq("Mika"))
+      expect(test_adopter.name()).to(eq("Jen"))
     end
   end
 
