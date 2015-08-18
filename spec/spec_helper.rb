@@ -1,7 +1,7 @@
 require('rspec')
 require('pg')
 require('animal')
-# require('adopter')
+require('adopter')
 
 DB = PG.connect({:dbname => "shelter_test"})
 
