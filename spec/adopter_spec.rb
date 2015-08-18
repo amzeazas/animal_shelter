@@ -30,4 +30,11 @@ describe(Adopter) do
     end
   end
 
+  describe('.find') do
+    it('returns an adopter by its ID') do
+      test_adopter1 = Adopter.new({:name => "Jen", :phone => "5038675309", :type_preference => "cat", :breed_preference => "Turkish Angora", :id => nil})
+      test_adopter2 = Adopter.new({:name => "Alexa", :phone => "5035552222", :type_preference => "cat", :breed_preference => "domestic shorthair", :id => nil})
+      expect(List.find(test_list2.id())).to(eq(test_list2))
+    end
+  end
 end
