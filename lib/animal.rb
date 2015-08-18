@@ -34,4 +34,14 @@ class Animal
     self.name().==(another_animal.name()).&(self.id().==(another_animal.id()))
   end
 
+  define_singleton_method(:find) do |id|
+    found_animal = nil
+    Animal.all().each() do |animal|
+      if animal.id().==(id)
+        found_animal = animal
+      end
+    end
+    found_animal
+  end
+
 end
