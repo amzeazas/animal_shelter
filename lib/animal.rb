@@ -8,4 +8,8 @@ class Animal
     @breed = attributes.fetch(:breed)
     @admit_date = attributes.fetch(:admit_date)
   end
+
+  define_singleton_method(:all) do
+    []
+  end
 end
