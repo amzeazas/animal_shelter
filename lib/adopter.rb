@@ -32,4 +32,14 @@ class Adopter
     self.name().==(another_adopter.name()).&(self.id().==(another_adopter.id()))
   end
 
+  define_singleton_method(:find) do |id|
+    found_adopter = nil
+    Adopter.all().each() do |adopter|
+      if adopter.id().==(id)
+        found_adopter = adopter
+      end
+    end
+    found_adopter
+  end
+
 end
