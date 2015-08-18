@@ -1,0 +1,42 @@
+<center>
+<h1>Shelter Employee Page</h1>
+<h4>Here you can view currently available animals and add more to the shelter database.</h2>
+</center>
+
+<br>
+<br>
+
+<h3>
+
+<b><u>Available animals:</u></b>
+<% if @animals.any?() %>
+  <ol>
+  <% @animals.each() do |animal| %>
+    <li><%= animal.name() %> (<%= animal.gender() %>, <%= animal.type() %>, <%= animal.breed() %>, <%= animal.admit_date() %>)</li>
+  <% end %>
+</ol>
+
+<% else %>
+  <p>There are no animals available for adoption. Yay world!</p>
+
+<% end %>
+
+<br>
+
+<form action='/animals'>
+  <div class="form-group">
+    <label for="new_animal">Add a new animal:</label>
+    <input id="name" name="name" class="form-control" type="text" placeholder="Add the animal's name here.">
+    <input id="gender" name="gender" class="form-control" type="text" placeholder="Add the animal's gender here.">
+    <input id="type" name="type" class="form-control" type="text" placeholder="Add the animal's type here.">
+    <input id="breed" name="breed" class="form-control" type="text" placeholder="Add the animal's breed here.">
+    <input id="admit_date" name="admit_date" class="form-control" type="text" placeholder="Add the animal's admit date here.">
+  </div>
+  <button type="submit" class="btn">Add Animal</button>
+</form>
+</h3>
+
+<br>
+<br>
+
+<a href="/adopters">Click here to view all potential adopters.</a>
