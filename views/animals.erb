@@ -23,14 +23,15 @@
 
 <br>
 
-<form action='/animals'>
+<form action='/animals' method="post">
   <div class="form-group">
     <label for="new_animal">Add a new animal:</label>
     <input id="name" name="name" class="form-control" type="text" placeholder="Add the animal's name here.">
     <input id="gender" name="gender" class="form-control" type="text" placeholder="Add the animal's gender here.">
     <input id="type" name="type" class="form-control" type="text" placeholder="Add the animal's type here.">
     <input id="breed" name="breed" class="form-control" type="text" placeholder="Add the animal's breed here.">
-    <input id="admit_date" name="admit_date" class="form-control" type="text" placeholder="Add the animal's admit date here.">
+    <input id="admit_date" name="admit_date" class="form-control" type="text" placeholder="Add the animal's admit date here (yyyy-mm-dd).">
+    <input id="adopter_id" name="adopter_id" class="form-control" type="number" placeholder="Add the adopter's id here (enter 0 if not adopted yet).">
   </div>
   <button type="submit" class="btn">Add Animal</button>
 </form>

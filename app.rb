@@ -12,12 +12,12 @@ get("/") do
 end
 
 get("/animals") do
-  @animals = Animals.all()
+  @animals = Animal.all()
   erb(:animals)
 end
 
 post("/animals") do
-  animal = Animals.new({:name => params.fetch("name"), :gender => params.fetch("gender"), :type => params.fetch("type"), :breed => params.fetch("breed"), :admit_date => params.fetch("admit_date")})
+  animal = Animal.new({:name => params.fetch("name"), :gender => params.fetch("gender"), :type => params.fetch("type"), :breed => params.fetch("breed"), :admit_date => params.fetch("admit_date"), :adopter_id => params.fetch("adopter_id")})
   animal.save()
   erb(:animal_success)
 end
