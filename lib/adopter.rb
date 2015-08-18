@@ -42,4 +42,15 @@ class Adopter
     found_adopter
   end
 
+  define_method(:animals) do
+    adopter_animals = []
+    animals = DB.exec("SELECT * FROM animals WHERE adopter_id = #{self.id()};")
+    animals.each() do |animal|
+      description = animal.fetch("description")
+      adopter_id = animal.fetch("adopter_id").to_i()
+      adopter_animals.push(Task.new({:description => description, :adopter_id => adopter_id}))
+    end
+    adopter_animals
+  end
+
 end

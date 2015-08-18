@@ -39,4 +39,16 @@ describe(Adopter) do
       expect(Adopter.find(test_adopter2.id())).to(eq(test_adopter2))
     end
   end
+
+  describe("#animals") do
+    it("returns an array of animals for that adopter") do
+      test_adopter = Adopter.new({:name => "Jen", :phone => "5038675309", :type_preference => "cat", :breed_preference => "Turkish Angora", :id => nil})
+      test_adopter.save()
+      test_animal1 = Animal.new({:name => "Mika", :gender => "female", :type => "cat", :breed => "Turkish Angora", :admit_date => "2015-08-01", :adopter_id => test_adopter.id()})
+      test_animal1.save()
+      test_animal2 = Animal.new({:name => "Quinn", :gender => "female", :type => "cat", :breed => "domestic shorthair", :admit_date => "2015-06-01", :adopter_id => test_adopter.id()})
+      test_animal2.save()
+      expect(test_adopter.animals()).to(eq([test_animal1, test_animal2]))
+    end
+  end
 end
