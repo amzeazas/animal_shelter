@@ -7,4 +7,11 @@ describe(Animal) do
       expect(test_animal.name()).to(eq("Mika"))
     end
   end
+
+  describe(".all") do
+    it("is empty at first") do
+      expect(Animal.all()).to(eq([]))
+    end
+  end
+
 end
