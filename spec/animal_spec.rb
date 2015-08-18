@@ -30,4 +30,13 @@ describe(Animal) do
     end
   end
 
+  describe('.find') do
+    it('returns an animal by its ID') do
+      test_animal1 = Animal.new({:name => "Mika", :gender => "female", :type => "cat", :breed => "Turkish Angora", :admit_date => "2015-08-01", :id => nil})
+      test_animal1.save()
+      test_animal2 = Animal.new({:name => "Quinn", :gender => "female", :type => "cat", :breed => "domestic shorthair", :admit_date => "2015-06-01", :id => nil})
+      test_animal2.save()
+      expect(Animal.find(test_animal2.id())).to(eq(test_animal2))
+    end
+  end
 end
